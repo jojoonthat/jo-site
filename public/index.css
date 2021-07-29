@@ -3,4 +3,14 @@
   padding: 0;
 }
 
+.background {
+  position: absolute;
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+}
+
 /*# sourceMappingURL=index.css.map */

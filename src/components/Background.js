@@ -56,7 +56,7 @@ function Background() {
       sky.material.uniforms['sunPosition'].value.copy(sun);
       scene.environment = pmremGenerator.fromScene(sky).texture;
     }
-    
+
     updateSun();
 
     // Create cube render target
@@ -117,7 +117,6 @@ function Background() {
 
       // Update render target
       cubeCamera.update(renderer, scene);
-      material.envMap = cubeRenderTarget.texture;
 
       renderer.render(scene, camera);
     }
