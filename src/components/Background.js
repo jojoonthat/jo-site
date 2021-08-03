@@ -203,6 +203,7 @@ function Background() {
 
     function render() {
       const time = performance.now() * 0.001;
+      const sin = Math.abs(Math.sin(time)) / 5;
       // Mesh animation
       mesh1.rotation.x = time * 0.4;
       mesh1.rotation.z = time * 0.1;
@@ -238,6 +239,24 @@ function Background() {
       camera.position.x += (mouse.x - camera.position.x) * 0.05;
       camera.position.y += (- mouse.y - camera.position.y) * 0.05;
       camera.lookAt(scene.position);
+
+      let cameraZ;
+      if (window.innerWidth >= 1800) { cameraZ = 80 }
+      else if (window.innerWidth >= 1500) { cameraZ = 100 }
+      else if (window.innerWidth >= 1200) { cameraZ = 120 }
+      else if (window.innerWidth >= 1070) { cameraZ = 140 }
+      else if (window.innerWidth >= 910) { cameraZ = 160 }
+      else if (window.innerWidth >= 790) { cameraZ = 180 }
+      else if (window.innerWidth >= 700) { cameraZ = 200 }
+      else if (window.innerWidth >= 630) { cameraZ = 220 }
+      else if (window.innerWidth >= 570) { cameraZ = 240 }
+      else if (window.innerWidth >= 520) { cameraZ = 260 }
+      else if (window.innerWidth >= 490) { cameraZ = 280 }
+      else if (window.innerWidth >= 420) { cameraZ = 320 }
+      else if (window.innerWidth >= 370) { cameraZ = 360 }
+      else if (window.innerWidth >= 340) { cameraZ = 400 }
+      else { cameraZ = 440 }
+      camera.position.z = cameraZ;
 
       // Update render target
       cubeCamera.update(renderer, scene);

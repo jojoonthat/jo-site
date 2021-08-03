@@ -1,15 +1,14 @@
 import React from 'react';
-import Button from './Button';
-import githubImg from '../img/github.png';
-import linkedinImg from '../img/linkedin.png';
-import gmailImg from '../img/gmail.png';
+import { ReactComponent as GithubSvg } from '../img/github.svg';
+import { ReactComponent as GmailSvg } from '../img/gmail.svg';
+import { ReactComponent as LinkedinSvg } from '../img/linkedin.svg';
 
 const Info = () => {
   return (
     <div className='info'>
-      <Button imgSource={githubImg} link='https://github.com/jojoonthat' />
-      <Button imgSource={gmailImg} link='mailto:jpan0917@gmail.com' />
-      <Button imgSource={linkedinImg} link='https://www.linkedin.com/in/panjoanne' />
+      <a className='button' href='https://github.com/jojoonthat' target='_blank'><GithubSvg /></a>
+      <a className='button' href='mailto:jpan0917@gmail.com' target='_blank'><GmailSvg /></a>
+      <a className='button' href='https://www.linkedin.com/in/panjoanne' target='_blank'><LinkedinSvg /></a>
     </div>
   )
 }
